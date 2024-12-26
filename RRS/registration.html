@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Registration</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f0f2;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #2f5d62;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .navbar input[type="text"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #2f5d62;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group input[type="file"] {
+            padding: 3px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div>
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
+    <div class="container">
+        <h2>Professional Registration</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="aadhaarNumber">Aadhaar Number</label>
+                <input type="text" id="aadhaarNumber" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="profession">Profession</label>
+                <select id="profession" required>
+                    <option selected>Electrician</option>
+                    <option value="Plumber">    Plumber</option>
+                    <option value="Carpenter">  Carpenter</option>
+                    <option value="HouseHelper">HouseHelper</option>
+                    <option value="Nany">       Nany</option>
+                    <option value="Painter">    Painter</option>
+                    <option value="Technician"> Technician</option>
+                    <option value="nurse">      Personal nurse</option>
+                    <option value="Gardener">   Gardener</option>
+                    <option value="Tuitor">    Tuitor</option>
+                    <option value="Guide">     Guide</option>
+                    <option value="Coock">     Coock</option>
+                    <option value="Driver">    Driver</option>
+                    <option value="Other">Other</option>
+                    </select>
+            </div>    
+            <div class="form-group" id="otherProfessionGroup" style="display: none;">
+                <label for="otherProfession">Please specify your profession:</label>
+                <input type="text" id="otherProfession" name="otherProfession">
+            </div>
+            
+            <div class="form-group">
+                <label for="experience">Years of Experience</label>
+                <input type="text" id="experience" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="certifications">Certifications (If any)</label>
+                <textarea id="certifications"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="references">References</label>
+                <textarea id="references"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Upload Your Photo</label>
+                <input type="file" id="photo" required>
+            </div>
+            <div class="form-group">
+                <label for="aadhaarCard">Upload Aadhaar Card Photo</label>
+                <input type="file" id="aadhaarCard" required>
+            </div>
+            <div class="form-group">
+                <label for="identityProof">Upload Other Identity Proof</label>
+                <input type="file" id="identityProof" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+    <div class="footer">
+        2024 Find Trusted Help From GharSeva. All rights reserved.
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const isValid = form.checkValidity();
+            if (isValid) {
+                alert('Congratulations!You have been successfully registered as a valid proffessional of GharSeva.');
+               
+            } else {
+                alert('Please fill out all required fields and upload all required files.');
+            }
+        });
+    </script>
+</body>
+</html>
